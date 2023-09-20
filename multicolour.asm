@@ -7,11 +7,11 @@ Start
 	ora #16
 	sta $d016	
         
-        ; BG colour
+        ; Bacground colour
         lda #0
         sta $d021
  
- 	; Border
+ 	; Border colour
         lda #0
         sta $d020
  
@@ -34,13 +34,13 @@ Start
 	sta $0403
         
         ; Different colour RAM settings
-        lda #%00001011		; bit 3 (from right) = 1 => multicolour
+        lda #%00001011		; bit 3 (from right, zero indexed) = 1 => multicolour
         sta $d800
         lda #%00001010
         sta $d801
         lda #%00001111
         sta $d802
-        lda #%00000110		; bit 3 (from right) = 0 => standard colour
+        lda #%00000110		; bit 3 = 0 => standard colour
         sta $d803
         
 infinite        jmp infinite
